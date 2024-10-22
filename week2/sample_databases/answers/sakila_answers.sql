@@ -23,3 +23,20 @@ WHERE film_id = 100;
 SELECT film_id, title, rating 
 FROM film 
 WHERE rating = "R";
+
+#Q7
+SELECT film_id, title, rating
+FROM film
+WHERE rating != "R";
+
+#Q8
+SELECT film_id, title, length
+FROM film 
+ORDER BY length asc
+limit 10;
+
+#Q9
+SELECT film_id, title, length
+FROM film
+WHERE length = "185"
+ORDER BY length desc;
