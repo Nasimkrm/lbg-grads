@@ -59,3 +59,27 @@ FROM actor
 GROUP BY last_name
 HAVING count(last_name) > 1
 ORDER BY count(last_name) desc;
+
+#Q13
+-- join film_actor and actor tables 
+CREATE VIEW actor_film
+AS
+SELECT	
+	a.actor_id, 
+    first_name, 
+    last_name
+FROM actor AS a
+INNER JOIN film_actor AS fa 
+ON a.actor_id = fa.actor_id;
+
+SELECT first_name, last_name, count(first_name), count(last_name)
+FROM actor_film
+GROUP BY first_name, last_name
+ORDER BY count(first_name) desc;
+
+#Q14
+SELECT release_year 
+from film
+WHERE film = "Academy Dinosaur";
+
+
